@@ -10,6 +10,7 @@ function Scene:initialize()
 end
 
 function Scene:on_show(input)
+
 end
 
 function Scene:final(go_self)
