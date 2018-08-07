@@ -1,0 +1,78 @@
+images {
+  image: "/assets/images/logo/img/logo_0012_cigareta.png"
+}
+images {
+  image: "/assets/images/logo/img/logo_0013_lama1.png"
+}
+images {
+  image: "/assets/images/logo/img/logo_0013_lama2.png"
+}
+images {
+  image: "/assets/images/logo/img/logo_0013_lama3.png"
+}
+images {
+  image: "/assets/images/logo/img/logo_0013_lama4.png"
+}
+images {
+  image: "/assets/images/logo/img/logo_0013_lama5.png"
+}
+images {
+  image: "/assets/images/logo/img/logo_0013_lama6.png"
+}
+images {
+  image: "/assets/images/logo/img/logo_0014_sheia.png"
+}
+images {
+  image: "/assets/images/logo/img/siga gorit.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_1.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_10.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_11.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_12.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_13.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_14.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_15.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_16.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_2.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_3.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_4.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_5.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_6.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_7.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_8.png"
+}
+images {
+  image: "/assets/images/logo/img/smoke_9.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0
