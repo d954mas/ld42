@@ -61,6 +61,9 @@ images {
 images {
   image: "/assets/images/panel.png"
 }
+images {
+  image: "/assets/images/progress_bar.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
