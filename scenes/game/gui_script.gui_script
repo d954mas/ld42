@@ -35,30 +35,6 @@ local function update_station_hp(self)
 end
 
 ---@param direction number 1 right -1 left
-local function change_size(self, direction, add)
-    if not self.selected_node then
-        return
-    end
-    if self.selected_node == 1 then
-        return
-    end
-    if self.selected_node == 2 and direction == -1 then
-        return
-    end
-    if self.selected_node == 4 and direction == 1 then
-        return
-    end
-    local next_node = self.selected_node + direction
-
-    local value = self.disk_space[self.selected_node] + add
-    local next_value = self.disk_space[next_node] - add
-    if value < 0.0001 or value > 0.99999 or next_value < 0.0001 or next_value > 0.9999 then
-        return
-    end
-    self.disk_space[self.selected_node] = value
-    self.disk_space[next_node] = next_value
-    update_disk_space(self)
-end
 local function change_pie_value(self, node, value)
     value = math.floor(value * 1000)/1000
     if node == 1 then
@@ -70,6 +46,8 @@ local function change_pie_value(self, node, value)
     local next_node = node + 1
 
     local delta =  math.floor((value - self.disk_space[node])*100)/100
+    if math.abs(delta) < 0.05 then return end
+    delta = 0.05 * math.abs(delta)/delta
     if self.disk_space[node] + delta < 0.00001 then
         return
     end
