@@ -5,7 +5,8 @@ local World = CLASS.class("World")
 
 function World:initialize()
     ---@type Hero[]
-   self.heroes = {HEROES.hero_1, HEROES.hero_2, HEROES.hero_3}
+    self.heroes = {HEROES.hero_1, HEROES.hero_2, HEROES.hero_3}
+    self:reset()
 end
 
 function World:act(disk_spaces)
@@ -15,7 +16,7 @@ function World:act(disk_spaces)
 end
 
 function World:reset()
-
+    self.station_hp = 1
 end    
 
 ---SINGLETON

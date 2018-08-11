@@ -2,6 +2,7 @@ local WORLD = require "scenes.game.model.world"
 local HASHES = require "libs.hashes"
 local GOOEY =  require "gooey.themes.dirtylarry.dirtylarry"
 local INPUT = require "libs.input_receiver"
+local ProgressBar = require "libs.progress_bar"
 ---@class SelfGui1
 ---@param self SelfGui1
 
@@ -25,7 +26,12 @@ local function find_clicked_pie(self, action)
             return i
         end
     end
-end    
+end
+
+---@param self SelfGui1
+local function update_station_hp(self)
+    self.station_hp:set_progress(WORLD.station_hp)
+end
 
 ---@param direction number 1 right -1 left
 local function change_size(self, direction,add)
@@ -49,8 +55,10 @@ local function update_hero_cells(self)
     for i=1, 3 do
         local hero_cell = self.hero_cells[i]
         local hero = WORLD.heroes[i]
-        gui.set_text(hero_cell.lbl_h ,"happy:" .. hero.happy)
-        gui.set_text(hero_cell.lbl_p ,"productivity" .. hero.productivity)
+        --gui.set_text(hero_cell.lbl_h ,"happy:" .. hero.happy)
+        --gui.set_text(hero_cell.lbl_p ,"productivity" .. hero.productivity)
+        hero_cell.progress_h:set_progress(hero.happy)
+        hero_cell.progress_p:set_progress(hero.productivity)
     end
 end
 
@@ -89,13 +97,18 @@ function init(self)
         {pie=gui.get_node("pie3"), lbl = gui.get_node("text3")},
     }
     self.hero_cells = {
-        {lbl_h=gui.get_node("hero_1/lbl_happy"), lbl_p = gui.get_node("hero_1/lbl_productivity")},
-        {lbl_h=gui.get_node("hero_2/lbl_happy"), lbl_p = gui.get_node("hero_2/lbl_productivity")},
-        {lbl_h=gui.get_node("hero_3/lbl_happy"), lbl_p = gui.get_node("hero_3/lbl_productivity")},
+        {lbl_h=gui.get_node("hero_1/lbl_happy"), lbl_p = gui.get_node("hero_1/lbl_productivity"),
+        progress_h = ProgressBar("hero_1/progress_happy"), progress_p = ProgressBar("hero_1/progress_productivity") },
+        {lbl_h=gui.get_node("hero_2/lbl_happy"), lbl_p = gui.get_node("hero_2/lbl_productivity"),
+        progress_h = ProgressBar("hero_2/progress_happy"), progress_p = ProgressBar("hero_2/progress_productivity") },
+        {lbl_h=gui.get_node("hero_3/lbl_happy"), lbl_p = gui.get_node("hero_3/lbl_productivity"),
+        progress_h =ProgressBar("hero_3/progress_happy"), progress_p = ProgressBar("hero_3/progress_productivity") },
     }
+    self.station_hp = ProgressBar("progress_station")
     self.disk_space = {0.4,0.1,0.25,0.25}
     update_disk_space(self)
     update_hero_cells(self)
+    update_station_hp(self)
 end
 
 
