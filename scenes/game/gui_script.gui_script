@@ -1,5 +1,7 @@
 local WORLD = require "scenes.game.model.world"
 local HASHES = require "libs.hashes"
+local GOOEY =  require "gooey.themes.dirtylarry.dirtylarry"
+local INPUT = require "libs.input_receiver"
 ---@class SelfGui1
 ---@param self SelfGui1
 
@@ -15,8 +17,70 @@ local function update_disk_space(self)
         rotation = rotation + 360 * space
     end
 end
+---@param self SelfGui1
+local function find_clicked_pie(self, action)
+    for i=2, 4 do
+        if gui.pick_node(self.ui[i].lbl, action.x, action.y) then
+            print(i)
+            return i
+        end
+    end
+end    
+
+---@param direction number 1 right -1 left
+local function change_size(self, direction,add)
+    if not self.selected_node then return end
+    if self.selected_node == 1 then return end
+    if self.selected_node == 2 and direction == -1 then return end
+    if self.selected_node == 4 and direction == 1 then return end
+    local next_node = self.selected_node + direction
+
+    local value = self.disk_space[self.selected_node] + add
+    local next_value = self.disk_space[next_node] - add
+    if value<0.0001 or value > 0.99999 or next_value <0.0001 or next_value >0.9999 then
+        return
+    end
+    self.disk_space[self.selected_node] = value
+    self.disk_space[next_node] = next_value
+    update_disk_space(self)
+end
+---@param self SelfGui1
+local function update_hero_cells(self)
+    for i=1, 3 do
+        local hero_cell = self.hero_cells[i]
+        local hero = WORLD.heroes[i]
+        gui.set_text(hero_cell.lbl_h ,"happy:" .. hero.happy)
+        gui.set_text(hero_cell.lbl_p ,"productivity" .. hero.productivity)
+    end
+end
+
+---@param self SelfGui1
+local function on_input_btns(self, action_id, action)
+    local group = GOOEY.group("group1", function()
+        GOOEY.button("btn_plus_1", action_id, action, function(button)
+            change_size(self, -1, 0.05)
+        end)
+        GOOEY.button("btn_plus_2", action_id, action, function(button)
+            change_size(self, 1, 0.05)
+        end)
+        GOOEY.button("btn_minus_1", action_id, action, function(button)
+            change_size(self, -1, -0.05)
+        end)
+        GOOEY.button("btn_minus_2", action_id, action, function(button)
+            change_size(self, 1, -0.05)
+        end)
+        GOOEY.button("btn_ok", action_id, action, function(button)
+            WORLD:act({ self.disk_space[2],self.disk_space[3],self.disk_space[4]})
+            update_hero_cells(self)
+        end)
+    end)
+    return group.consumed
+end
+
+
 
 function init(self)
+    INPUT.acquire()
     WORLD:reset()
     self.ui = {
         {pie=gui.get_node("pie0"), lbl = gui.get_node("text0")},
@@ -24,13 +88,21 @@ function init(self)
         {pie=gui.get_node("pie2"), lbl = gui.get_node("text2")},
         {pie=gui.get_node("pie3"), lbl = gui.get_node("text3")},
     }
+    self.hero_cells = {
+        {lbl_h=gui.get_node("hero_1/lbl_happy"), lbl_p = gui.get_node("hero_1/lbl_productivity")},
+        {lbl_h=gui.get_node("hero_2/lbl_happy"), lbl_p = gui.get_node("hero_2/lbl_productivity")},
+        {lbl_h=gui.get_node("hero_3/lbl_happy"), lbl_p = gui.get_node("hero_3/lbl_productivity")},
+    }
     self.disk_space = {0.4,0.1,0.25,0.25}
     update_disk_space(self)
+    update_hero_cells(self)
 end
 
 
 
+
 function final(self)
+    INPUT.release()
 	WORLD:reset()
 end
 
@@ -45,9 +117,14 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
+    if  on_input_btns(self, action_id, action) then
+        return
+    end
     if action_id == HASHES.INPUT_TOUCH then
         if action.pressed then
-
+            if self.selected_node then gui.set_size(self.ui[self.selected_node].pie, vmath.vector3(400,400,0)) end
+            self.selected_node = find_clicked_pie(self, action)
+            if self.selected_node then gui.set_size(self.ui[self.selected_node].pie, vmath.vector3(500,500,0)) end
         elseif action.released then
             self.on_touched_disk = false
         end
@@ -55,6 +132,7 @@ function on_input(self, action_id, action)
             --chnage sector size
         end
     end
+   
 end
 
 function on_reload(self)

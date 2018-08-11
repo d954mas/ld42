@@ -8,9 +8,9 @@ function World:initialize()
    self.heroes = {HEROES.hero_1, HEROES.hero_2, HEROES.hero_3}
 end
 
-function World:act()
-    for _, hero in ipairs(self.heroes) do
-        hero:act(0.33)
+function World:act(disk_spaces)
+    for i, hero in ipairs(self.heroes) do
+        hero:act(disk_spaces[i])
     end
 end
 
