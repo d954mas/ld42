@@ -1,0 +1,9 @@
+images {
+  image: "/assets/images/space.jpg"
+}
+images {
+  image: "/assets/images/computer.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

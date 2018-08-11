@@ -4,6 +4,63 @@ images {
 images {
   image: "/gooey/themes/rpg/images/cursorHand_blue.png"
 }
+images {
+  image: "/assets/images/cursor_hand.png"
+}
+images {
+  image: "/assets/images/empty.png"
+}
+images {
+  image: "/assets/images/enginer_angry.png"
+}
+images {
+  image: "/assets/images/enginer_face.png"
+}
+images {
+  image: "/assets/images/enginer_happy.png"
+}
+images {
+  image: "/assets/images/enginer_neitral.png"
+}
+images {
+  image: "/assets/images/enginer_tired.png"
+}
+images {
+  image: "/assets/images/medic_angry.png"
+}
+images {
+  image: "/assets/images/medic_face.png"
+}
+images {
+  image: "/assets/images/medic_happy.png"
+}
+images {
+  image: "/assets/images/medic_neitral.png"
+}
+images {
+  image: "/assets/images/medic_tired.png"
+}
+images {
+  image: "/assets/images/scientist_angry.png"
+}
+images {
+  image: "/assets/images/scientist_face.png"
+}
+images {
+  image: "/assets/images/scientist_happy.png"
+}
+images {
+  image: "/assets/images/scientist_neitral.png"
+}
+images {
+  image: "/assets/images/scientist_tired.png"
+}
+images {
+  image: "/assets/images/window.png"
+}
+images {
+  image: "/assets/images/panel.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

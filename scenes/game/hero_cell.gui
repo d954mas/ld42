@@ -117,7 +117,7 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
   parent: "box"
-  layer: ""
+  layer: "text"
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
@@ -160,7 +160,7 @@ nodes {
   type: TYPE_TEMPLATE
   id: "progress_happy"
   parent: "lbl_happy"
-  layer: ""
+  layer: "top"
   inherit_alpha: true
   alpha: 1.0
   template: "/scenes/game/progress_bar.gui"
@@ -385,7 +385,7 @@ nodes {
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
   parent: "box"
-  layer: ""
+  layer: "text"
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
@@ -428,7 +428,7 @@ nodes {
   type: TYPE_TEMPLATE
   id: "progress_productivity"
   parent: "lbl_productivity"
-  layer: ""
+  layer: "top"
   inherit_alpha: true
   alpha: 1.0
   template: "/scenes/game/progress_bar.gui"
@@ -598,6 +598,12 @@ nodes {
   alpha: 1.0
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
+}
+layers {
+  name: "text"
+}
+layers {
+  name: "top"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
