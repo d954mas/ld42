@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d1ff737-2669-4421-ac70-4fec5f3687c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/scenes/game/game_gui.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game_gui.gui" afterDir="false" />
-    </list>
+    <list default="true" id="8d1ff737-2669-4421-ac70-4fec5f3687c5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,16 +92,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scenes/game/model/world.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="73">
               <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="243">
@@ -218,7 +216,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534010881617" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534012856584" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../defold_api.zip!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -251,12 +249,12 @@
       <workItem from="1533675342675" duration="1222000" />
       <workItem from="1533676600972" duration="64000" />
       <workItem from="1533676696043" duration="2888000" />
-      <workItem from="1533993681985" duration="13289000" />
+      <workItem from="1533993681985" duration="13741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17731000" />
+    <option name="totallyTimeSpent" value="18183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -363,13 +361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/model/world.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../defold_api.zip!/api/vector_math.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -412,6 +403,13 @@
           <folding>
             <element signature="e#1119#1799#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/model/world.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
         </state>
       </provider>
     </entry>

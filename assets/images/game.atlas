@@ -1,6 +1,9 @@
 images {
   image: "/assets/images/empty.png"
 }
+images {
+  image: "/gooey/themes/rpg/images/cursorHand_blue.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
