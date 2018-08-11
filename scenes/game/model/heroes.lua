@@ -1,12 +1,17 @@
 local CLASS = require("libs.middleclass")
 local M = {}
+---@class Hero
 local BaseModel = CLASS.class("BaseModel")
-
 function BaseModel:initialize(productivity_mul)
     self.max_productivity = 1
     self.max_happy = 1
     self.productivity = 0.5
     self.happy = 0.5
+end
+
+---@param number space_percent процент от диска
+function BaseModel:act(space_percent)
+
 end
 
 
