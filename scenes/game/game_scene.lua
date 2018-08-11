@@ -6,7 +6,7 @@ local STENCIL = require "Jester.stencil.stencil_render"
 --- Constructor
 -- @param name Name of scene.Must be unique
 function Scene:initialize()
-    ProxyScene.initialize(self, "LogoScene", "/logo#proxy", "logo:/scene_controller")
+    ProxyScene.initialize(self, "GameScene", "/game#proxy", "game:/scene_controller")
 end
 
 function Scene:on_show(input)

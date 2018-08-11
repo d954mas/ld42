@@ -1,6 +1,5 @@
 local MsgReceiver = require "libs.msg_receiver"
 local HASHES = require "libs.hashes"
-local DEBUG_DRAWER = require "libs.debug_drawer.debug_drawer"
 local STENCIL = require "Jester.stencil.stencil_render"
 local CONSTANTS = require "libs.constants"
 local SCREEN_HELPER = require "libs.screen_helper"
@@ -38,7 +37,6 @@ end
 local function window_resized(self, message_id, message)
     self.gui_projection = vmath.matrix4_orthographic(0, render.get_window_width(), 0, render.get_window_height(), -1, 1)
     update_game_projection(self)
-    DEBUG_DRAWER.update_go()
 end
 
 function init(self)
@@ -105,7 +103,6 @@ function update(self)
     render.set_depth_mask(false)
     render.draw_debug2d()
     STENCIL.render_to_texture_end()
-    DEBUG_DRAWER.clear()
 end
 
 function on_message(self, message_id, message)

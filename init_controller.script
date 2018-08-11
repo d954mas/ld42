@@ -7,9 +7,10 @@ local FLOW = require "libs.flow"
 LOG.set_appname("LD42")
 LOG.toggle_print()
 local scenes = {
-    require "scenes.logo.logo_scene",
+    require "scenes.game.game_scene",
 }
 function init(self)
+    defos.set_view_size(nil, nil, 960, 540)
     INPUT.acquire()
     --FIX module not found
     local reg_scenes = {}
@@ -17,7 +18,7 @@ function init(self)
         reg_scenes[i] = v()
     end
     JESTER.register(reg_scenes)
-    JESTER.show("LogoScene")
+    JESTER.show("GameScene")
 end
 
 function update(self, dt)

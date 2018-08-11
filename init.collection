@@ -39,26 +39,6 @@ instances {
     z: 1.0
   }
 }
-instances {
-  id: "debug_drawer"
-  prototype: "/libs/debug_drawer/debug_drawer.go"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
 scale_along_z: 0
 embedded_instances {
   id: "controller"
@@ -97,7 +77,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "scenes"
-  children: "logo"
+  children: "game"
   data: ""
   position {
     x: 0.0
@@ -117,11 +97,11 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "logo"
+  id: "game"
   data: "embedded_components {\n"
   "  id: \"proxy\"\n"
   "  type: \"collectionproxy\"\n"
-  "  data: \"collection: \\\"/scenes/logo/logo.collection\\\"\\n"
+  "  data: \"collection: \\\"/scenes/game/game.collection\\\"\\n"
   "exclude: false\\n"
   "\"\n"
   "  position {\n"
