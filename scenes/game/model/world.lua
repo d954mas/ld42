@@ -3,7 +3,7 @@ local HEROES = require "scenes.game.model.heroes"
 ---@class World
 local World = CLASS.class("World")
 
-function World:initialize(productivity_mul)
+function World:initialize()
     ---@type Hero[]
    self.heroes = {HEROES.hero_1, HEROES.hero_2, HEROES.hero_3}
 end
@@ -14,5 +14,9 @@ function World:act()
     end
 end
 
+function World:reset()
 
-return World
+end    
+
+---SINGLETON
+return World()

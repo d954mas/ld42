@@ -9,6 +9,11 @@ function BaseModel:initialize(productivity_mul)
     self.happy = 0.5
 end
 
+function BaseModel:reset()
+    self.productivity = 0.5
+    self.happy = 0.5
+end    
+
 ---@param number space_percent процент от диска
 function BaseModel:act(space_percent)
 
