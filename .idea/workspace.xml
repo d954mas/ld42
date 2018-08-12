@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d1ff737-2669-4421-ac70-4fec5f3687c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/images/game.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/game.atlas" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/game/game_gui.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game_gui.gui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/game/gui_script.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/gui_script.gui_script" afterDir="false" />
@@ -46,14 +45,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="fp" value="6" />
-          <entry key="gui_script" value="2675" />
+          <entry key="gui_script" value="2705" />
           <entry key="lua" value="1300" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="lua" value="3975" />
+          <entry key="lua" value="4005" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -111,8 +110,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="149" column="40" selection-start-line="149" selection-start-column="40" selection-end-line="149" selection-end-column="40" />
+            <state relative-caret-position="178">
+              <caret line="103" column="39" lean-forward="true" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
               <folding>
                 <element signature="e#5742#6054#0" />
               </folding>
@@ -157,7 +156,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="97" />
     <option name="y" value="-16" />
     <option name="width" value="1346" />
@@ -268,12 +267,12 @@
       <workItem from="1533676600972" duration="64000" />
       <workItem from="1533676696043" duration="2888000" />
       <workItem from="1533993681985" duration="14621000" />
-      <workItem from="1534075820170" duration="2040000" />
+      <workItem from="1534075820170" duration="2697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21103000" />
+    <option name="totallyTimeSpent" value="21760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -412,8 +411,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="149" column="40" selection-start-line="149" selection-start-column="40" selection-end-line="149" selection-end-column="40" />
+        <state relative-caret-position="178">
+          <caret line="103" column="39" lean-forward="true" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
           <folding>
             <element signature="e#5742#6054#0" />
           </folding>

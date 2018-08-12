@@ -15,7 +15,7 @@ local function update_disk_space(self)
     for i = 1, 4 do
         local space = self.disk_space[i]
         local ui = self.ui[i]
-        gui.set_text(ui.lbl,space)
+        gui.set_text(ui.lbl, space)
         gui.set_rotation(ui.pie, vmath.vector3(0, 0, rotation))
         gui.set_rotation(ui.line, vmath.vector3(0, 0, rotation))
         gui.set_rotation(ui.drag, vmath.vector3(0, 0, rotation))
@@ -40,7 +40,7 @@ end
 
 ---@param direction number 1 right -1 left
 local function change_pie_value(self, node, value)
-    value = math.floor(value * 1000)/1000
+    value = math.floor(value * 1000) / 1000
     if node == 1 then
         return
     end
@@ -49,27 +49,29 @@ local function change_pie_value(self, node, value)
     end
     local next_node = node + 1
 
-    local delta =  math.floor((value - self.disk_space[node])*100)/100
-    if math.abs(delta) < 0.05 then return end
-    delta = 0.05 * math.abs(delta)/delta
+    local delta = math.floor((value - self.disk_space[node]) * 100) / 100
+    if math.abs(delta) < 0.05 then
+        return
+    end
+    delta = 0.05 * math.abs(delta) / delta
     if self.disk_space[node] + delta < 0.00001 then
         return
     end
     if self.disk_space[next_node] - delta < 0.00001 then
         return
     end
-    self.disk_space[node] = LUME.clamp(self.disk_space[node] + delta,0.01,1)
-    self.disk_space[next_node] = LUME.clamp(self.disk_space[next_node] - delta,0.01,1)
-   -- self.disk_space[node] = math.floor((self.disk_space[node])*100)/100
-  --  self.disk_space[next_node] = math.floor((self.disk_space[next_node])*100)/100
+    self.disk_space[node] = LUME.clamp(self.disk_space[node] + delta, 0.01, 1)
+    self.disk_space[next_node] = LUME.clamp(self.disk_space[next_node] - delta, 0.01, 1)
+    -- self.disk_space[node] = math.floor((self.disk_space[node])*100)/100
+    --  self.disk_space[next_node] = math.floor((self.disk_space[next_node])*100)/100
     update_disk_space(self)
 end
 
 local faces = {
-    {value = 0.7, type = "happy"},
-    {value = 0.3, type = "neitral"},
-    {value = 0.1, type = "tired"},
-    {value = 0, type = "angry"}
+    { value = 0.7, type = "happy" },
+    { value = 0.3, type = "neitral" },
+    { value = 0.1, type = "tired" },
+    { value = 0, type = "angry" }
 }
 
 local hero_types = {
@@ -91,6 +93,21 @@ local function update_hero_cells(self)
                 break
             end
         end
+        if hero.prev_happy then
+            local dt =  hero.happy - hero.prev_happy
+            local fx
+            if dt > 0.0001 then
+                fx = "particle_happy"
+            elseif dt < -0.0001 then
+                fx = "particle_sad"
+            else
+                fx = "particle_neitral"
+            end
+
+            gui.play_particlefx(gui.get_node("hero_" .. i .. "/" .. fx))
+        else
+            hero.prev_happy = hero.happy
+        end
         hero_cell.progress_h:set_progress(hero.happy)
         hero_cell.progress_p:set_progress(hero.productivity)
         gui.play_flipbook(hero_cell.face, hero_types[i] .. "_" .. face)
@@ -98,13 +115,14 @@ local function update_hero_cells(self)
             angry = angry + 1
         end
     end
-    angry = LUME.clamp(angry,0,2)
+
+    angry = LUME.clamp(angry, 0, 2)
     pprint(angry)
-    for i=1, angry do
+    for i = 1, angry do
         gui.set_enabled(self["austranaut_" .. i], true)
         gui.play_flipbook(self["lever_" .. i], "lever_on")
     end
-    for i=2, angry+1, -1 do
+    for i = 2, angry + 1, -1 do
         gui.set_enabled(self["austranaut_" .. i], false)
         gui.play_flipbook(self["lever_" .. i], "lever_off")
     end
@@ -126,23 +144,23 @@ function init(self)
     INPUT.acquire()
     WORLD:reset()
     self.ui = {
-        { pie = gui.get_node("pie0/pie"), lbl = gui.get_node("text0") , line = gui.get_node("pie0/line"), drag = gui.get_node("pie0/drag_node")},
+        { pie = gui.get_node("pie0/pie"), lbl = gui.get_node("text0"), line = gui.get_node("pie0/line"), drag = gui.get_node("pie0/drag_node") },
         { pie = gui.get_node("pie1/pie"), lbl = gui.get_node("text1"), line = gui.get_node("pie1/line"), drag = gui.get_node("pie1/drag_node") },
-        { pie = gui.get_node("pie2/pie"), lbl = gui.get_node("text2") , line = gui.get_node("pie2/line"), drag = gui.get_node("pie2/drag_node")},
-        { pie = gui.get_node("pie3/pie"), lbl = gui.get_node("text3") , line = gui.get_node("pie3/line"), drag = gui.get_node("pie3/drag_node")},
+        { pie = gui.get_node("pie2/pie"), lbl = gui.get_node("text2"), line = gui.get_node("pie2/line"), drag = gui.get_node("pie2/drag_node") },
+        { pie = gui.get_node("pie3/pie"), lbl = gui.get_node("text3"), line = gui.get_node("pie3/line"), drag = gui.get_node("pie3/drag_node") },
     }
     self.hero_cells = {
-        {icon = gui.get_node("hero_1/icon"), bar = gui.get_node("hero_1/box1"),
-        progress_h = ProgressBar("hero_1/progress_happy"), progress_p = ProgressBar("hero_1/progress_productivity"),
-        face = gui.get_node("hero_1/face")},
+        { icon = gui.get_node("hero_1/icon"), bar = gui.get_node("hero_1/box1"),
+          progress_h = ProgressBar("hero_1/progress_happy"), progress_p = ProgressBar("hero_1/progress_productivity"),
+          face = gui.get_node("hero_1/face") },
         {
             icon = gui.get_node("hero_2/icon"), bar = gui.get_node("hero_2/box1"),
-        progress_h = ProgressBar("hero_2/progress_happy"), progress_p = ProgressBar("hero_2/progress_productivity"),
-        face = gui.get_node("hero_2/face")},
-        { 
+            progress_h = ProgressBar("hero_2/progress_happy"), progress_p = ProgressBar("hero_2/progress_productivity"),
+            face = gui.get_node("hero_2/face") },
+        {
             icon = gui.get_node("hero_3/icon"), bar = gui.get_node("hero_3/box1"),
-        progress_h = ProgressBar("hero_3/progress_happy"), progress_p = ProgressBar("hero_3/progress_productivity"),
-        face = gui.get_node("hero_3/face")}
+            progress_h = ProgressBar("hero_3/progress_happy"), progress_p = ProgressBar("hero_3/progress_productivity"),
+            face = gui.get_node("hero_3/face") }
     }
     self.drag_node_1 = gui.get_node("pie2/drag_node")
     self.drag_node_2 = gui.get_node("pie3/drag_node")
@@ -217,19 +235,23 @@ function on_input(self, action_id, action)
 
         end
     end
-    if action_id == nil or (not self.selected_drag and action_id == HASHES.INPUT_TOUCH)then
+    if action_id == nil or (not self.selected_drag and action_id == HASHES.INPUT_TOUCH) then
         local touched = false
         for i, hero in ipairs(self.hero_cells) do
             if not hero.animated and (gui.pick_node(hero.icon, action.x, action.y) or gui.pick_node(hero.bar, action.x, action.y)) then
                 touched = true
-                if self.pointer_on_icon~=  i then
+                if self.pointer_on_icon ~= i then
                     if self.pointer_on_icon then
                         local cell = self.hero_cells[self.pointer_on_icon]
                         cell.animated = true
-                        gui.animate(cell.bar, "scale.x", 0, gui.EASING_INEXPO, ANIMATION_HIDE_TIME, 0,function() cell.animated = false end, gui.PLAYBACK_ONCE_FORWARD)
+                        gui.animate(cell.bar, "scale.x", 0, gui.EASING_INEXPO, ANIMATION_HIDE_TIME, 0, function()
+                            cell.animated = false
+                        end, gui.PLAYBACK_ONCE_FORWARD)
                     end
                     self.pointer_on_icon = i
-                    gui.animate(hero.bar, "scale.x", 1, gui.EASING_INEXPO, ANIMATION_SHOW_TIME, 0,function() hero.animated = false end, gui.PLAYBACK_ONCE_FORWARD)
+                    gui.animate(hero.bar, "scale.x", 1, gui.EASING_INEXPO, ANIMATION_SHOW_TIME, 0, function()
+                        hero.animated = false
+                    end, gui.PLAYBACK_ONCE_FORWARD)
                 end
                 break
             end
@@ -237,7 +259,9 @@ function on_input(self, action_id, action)
         if not touched and (self.pointer_on_icon and not self.hero_cells[self.pointer_on_icon].animated) then
             local cell = self.hero_cells[self.pointer_on_icon]
             cell.animated = true
-            gui.animate(self.hero_cells[self.pointer_on_icon].bar, "scale.x", 0, gui.EASING_INEXPO, ANIMATION_HIDE_TIME, 0,function() cell.animated = false end, gui.PLAYBACK_ONCE_FORWARD)
+            gui.animate(self.hero_cells[self.pointer_on_icon].bar, "scale.x", 0, gui.EASING_INEXPO, ANIMATION_HIDE_TIME, 0, function()
+                cell.animated = false
+            end, gui.PLAYBACK_ONCE_FORWARD)
             self.pointer_on_icon = false
         end
     end

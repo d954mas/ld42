@@ -85,6 +85,15 @@ images {
 images {
   image: "/assets/images/austranaut.png"
 }
+images {
+  image: "/assets/images/emodgy grust.png"
+}
+images {
+  image: "/assets/images/emodgy neitral.png"
+}
+images {
+  image: "/assets/images/emodgy radost.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
