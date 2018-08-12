@@ -56,12 +56,6 @@ images {
   image: "/assets/images/scientist_tired.png"
 }
 images {
-  image: "/assets/images/window.png"
-}
-images {
-  image: "/assets/images/panel.png"
-}
-images {
   image: "/assets/images/progress_bar.png"
 }
 images {

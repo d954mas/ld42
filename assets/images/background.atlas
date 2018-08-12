@@ -4,6 +4,9 @@ images {
 images {
   image: "/assets/images/computer.png"
 }
+images {
+  image: "/assets/images/computer_blick.png"
+}
 margin: 0
 extrude_borders: 0
 inner_padding: 0

@@ -87,8 +87,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 673.0
-    y: 194.0
+    x: 724.0
+    y: 244.0
     z: 0.0
     w: 1.0
   }
@@ -234,8 +234,8 @@ nodes {
 }
 nodes {
   position {
-    x: -398.0
-    y: -66.0
+    x: -532.0
+    y: -67.0
     z: 0.0
     w: 1.0
   }
@@ -265,12 +265,13 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "game/empty"
   id: "box"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
+  parent: "box2"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -288,71 +289,8 @@ nodes {
 }
 nodes {
   position {
-    x: -54.0
-    y: 76.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
     x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "happy"
-  font: "roboto_regular"
-  id: "lbl_happy"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_W
-  outline {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "box"
-  layer: "top"
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: -39.0
-    y: -46.0
+    y: 20.0
     z: 0.0
     w: 1.0
   }
@@ -382,7 +320,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "progress_happy"
-  parent: "lbl_happy"
+  parent: "box"
   layer: "top"
   inherit_alpha: true
   alpha: 1.0
@@ -409,8 +347,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 300.0
-    y: 40.0
+    x: 325.0
+    y: 27.0
     z: 0.0
     w: 1.0
   }
@@ -441,6 +379,8 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 1
+  overridden_fields: 4
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
 }
@@ -464,8 +404,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 300.0
-    y: 40.0
+    x: 325.0
+    y: 27.0
     z: 0.0
     w: 1.0
   }
@@ -496,75 +436,13 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 4
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
 }
 nodes {
   position {
-    x: -96.0
-    y: -13.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
     x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "productivity"
-  font: "roboto_regular"
-  id: "lbl_productivity"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_W
-  outline {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  shadow {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "box"
-  layer: "top"
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 5.0
     y: -46.0
     z: 0.0
     w: 1.0
@@ -595,7 +473,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "progress_productivity"
-  parent: "lbl_productivity"
+  parent: "box"
   layer: "top"
   inherit_alpha: true
   alpha: 1.0
@@ -622,8 +500,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 300.0
-    y: 40.0
+    x: 325.0
+    y: 27.0
     z: 0.0
     w: 1.0
   }
@@ -654,6 +532,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 4
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
 }
@@ -677,8 +556,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 300.0
-    y: 40.0
+    x: 325.0
+    y: 27.0
     z: 0.0
     w: 1.0
   }
@@ -709,6 +588,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 4
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
 }

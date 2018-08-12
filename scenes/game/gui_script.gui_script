@@ -115,14 +115,14 @@ function init(self)
         { pie = gui.get_node("pie3/pie"), lbl = gui.get_node("text3") , line = gui.get_node("pie3/line"), drag = gui.get_node("pie3/drag_node")},
     }
     self.hero_cells = {
-        { lbl_h = gui.get_node("hero_1/lbl_happy"), lbl_p = gui.get_node("hero_1/lbl_productivity"),
+        {
         progress_h = ProgressBar("hero_1/progress_happy"), progress_p = ProgressBar("hero_1/progress_productivity"),
         face = gui.get_node("hero_1/face")},
     
-        { lbl_h = gui.get_node("hero_2/lbl_happy"), lbl_p = gui.get_node("hero_2/lbl_productivity"),
+        {
         progress_h = ProgressBar("hero_2/progress_happy"), progress_p = ProgressBar("hero_2/progress_productivity"),
         face = gui.get_node("hero_2/face")},
-        { lbl_h = gui.get_node("hero_3/lbl_happy"), lbl_p = gui.get_node("hero_3/lbl_productivity"),
+        { 
         progress_h = ProgressBar("hero_3/progress_happy"), progress_p = ProgressBar("hero_3/progress_productivity"),
         face = gui.get_node("hero_3/face")},
     }
