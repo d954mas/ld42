@@ -115,19 +115,6 @@ local function update_hero_cells(self)
         hero_cell.progress_h:set_progress(hero.happy)
         hero_cell.progress_p:set_progress(hero.productivity)
         gui.play_flipbook(hero_cell.face, hero_types[i] .. "_" .. face)
-        if hero.happy <= 0.0001 then
-            angry = angry + 1
-        end
-    end
-
-    angry = LUME.clamp(angry, 0, 2)
-    for i = 1, angry do
-        gui.set_enabled(self["austranaut_" .. i], true)
-        gui.play_flipbook(self["lever_" .. i], "lever_on")
-    end
-    for i = 2, angry + 1, -1 do
-        gui.set_enabled(self["austranaut_" .. i], false)
-        gui.play_flipbook(self["lever_" .. i], "lever_off")
     end
     gui.set_text(gui.get_node("lbl_days"), WORLD.days)
 end
@@ -141,6 +128,30 @@ local function next_day(self)
         gui.set_text(gui.get_node("lbl_day"), "DAY:" .. 16 - WORLD.days)
         gui.animate(gui.get_node("container_day"), "color.w", 1, gui.EASING_LINEAR, 2,0,nil,gui.PLAYBACK_ONCE_PINGPONG)
         FLOW.delay(4)
+        local angry = 0
+        for _, hero in ipairs(WORLD.heroes) do
+            if hero.happy <= 0.0001 then
+                angry = angry + 1
+            end
+        end
+        --check austronafts
+        angry = LUME.clamp(angry, 0, 2)
+        for i = 1, angry do
+            if not gui.is_enabled(self["austranaut_" .. i]) then
+                FLOW.delay(1)
+                msg.post("main:/sounds#switch", HASHES.MSG_PLAY_SOUND)
+                gui.set_enabled(self["austranaut_" .. i], true)
+                gui.play_flipbook(self["lever_" .. i], "lever_on")
+            end
+        end
+        for i = 2, angry + 1, -1 do
+            if gui.is_enabled(self["austranaut_" .. i]) then
+                FLOW.delay(1)
+                msg.post("main:/sounds#switch", HASHES.MSG_PLAY_SOUND)
+                gui.set_enabled(self["austranaut_" .. i], false)
+                gui.play_flipbook(self["lever_" .. i], "lever_off")
+            end
+        end
 
         
         INPUT.acquire()
