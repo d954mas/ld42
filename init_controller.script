@@ -17,6 +17,7 @@ function init(self)
     for i, v in ipairs(scenes) do
         reg_scenes[i] = v()
     end
+    msg.post("/sounds#sound", HASHES.MSG_PLAY_SOUND)
     JESTER.register(reg_scenes)
     JESTER.show("GameScene")
 end

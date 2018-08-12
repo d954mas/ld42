@@ -4,10 +4,13 @@ local GOOEY = require "gooey.themes.dirtylarry.dirtylarry"
 local INPUT = require "libs.input_receiver"
 local LUME = require "libs.lume"
 local ProgressBar = require "libs.progress_bar"
+local FLOW = require "libs.flow"
 local ANIMATION_SHOW_TIME = 0.5
 local ANIMATION_HIDE_TIME = 0.8
 ---@class SelfGui1
----@param self SelfGui1
+
+
+
 
 ---@param self SelfGui1
 local function update_disk_space(self)
@@ -118,7 +121,6 @@ local function update_hero_cells(self)
     end
 
     angry = LUME.clamp(angry, 0, 2)
-    pprint(angry)
     for i = 1, angry do
         gui.set_enabled(self["austranaut_" .. i], true)
         gui.play_flipbook(self["lever_" .. i], "lever_on")
@@ -127,8 +129,23 @@ local function update_hero_cells(self)
         gui.set_enabled(self["austranaut_" .. i], false)
         gui.play_flipbook(self["lever_" .. i], "lever_off")
     end
-
     gui.set_text(gui.get_node("lbl_days"), WORLD.days)
+end
+
+---@param self SelfGui1
+local function next_day(self)
+    FLOW.start(function()
+        INPUT.release()
+        update_station_hp(self)
+        update_hero_cells(self)
+        gui.set_text(gui.get_node("lbl_day"), "DAY:" .. 16 - WORLD.days)
+        gui.animate(gui.get_node("container_day"), "color.w", 1, gui.EASING_LINEAR, 2,0,nil,gui.PLAYBACK_ONCE_PINGPONG)
+        FLOW.delay(4)
+
+        
+        INPUT.acquire()
+    end)
+
 end
 
 ---@param self SelfGui1
@@ -136,7 +153,7 @@ local function on_input_btns(self, action_id, action)
     local group = GOOEY.group("group1", function()
         GOOEY.button("btn_ok", action_id, action, function(button)
             WORLD:act({ self.disk_space[2], self.disk_space[3], self.disk_space[4] })
-            update_hero_cells(self)
+            next_day(self)
         end)
     end)
     return group.consumed
@@ -144,7 +161,8 @@ end
 
 ---@param self SelfGui1
 function init(self)
-    INPUT.acquire()
+    --INPUT.acquire()
+    gui.set_color(gui.get_node("container_day"), vmath.vector4(1,1,1,0))
     WORLD:reset()
     self.ui = {
         { pie = gui.get_node("pie0/pie"), lbl = gui.get_node("text0"), line = gui.get_node("pie0/line"), drag = gui.get_node("pie0/drag_node") },
@@ -176,8 +194,7 @@ function init(self)
     self.station_hp = ProgressBar("progress_station")
     self.disk_space = { 0.4, 0.1, 0.25, 0.25 }
     update_disk_space(self)
-    update_hero_cells(self)
-    update_station_hp(self)
+    next_day(self)
     self.pie_center = gui.get_position(gui.get_node("disk_sectors"))
 end
 
