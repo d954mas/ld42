@@ -2,6 +2,7 @@ local ProxyScene = require "Jester.proxy_scene"
 local Scene = ProxyScene:subclass("LogoScene")
 local FLOW = require "libs.flow"
 local JESTER = require "Jester.jester"
+local HASHES = require "libs.hashes"
 local STENCIL = require "Jester.stencil.stencil_render"
 --- Constructor
 -- @param name Name of scene.Must be unique
@@ -10,7 +11,7 @@ function Scene:initialize()
 end
 
 function Scene:on_show(input)
-
+    msg.post("/gui#game_end_gui", HASHES.MSG_DISABLE)
 end
 
 function Scene:final(go_self)
@@ -18,7 +19,6 @@ function Scene:final(go_self)
 end
 
 function Scene:update(go_self, dt)
-    FLOW.update(dt)
 end
 
 function Scene:show_out(co)

@@ -52,7 +52,7 @@ function M.render()
             render.draw(M.screen_pred)
             render.disable_texture(0, M.render_target)
         end
-        -- Using the simple trick from Sven's post here: https://forum.defold.com/t/making-a-flashlight/286/3
+      -- Using the simple trick from Sven's post here: https://forum.defold.com/t/making-a-flashlight/286/3
         -- 1. We need to disable color drawing while rendering the mask
         render.set_color_mask(false, false, false, false)
         -- 2. Enable stencil test and setup stencil mask parameters
@@ -73,7 +73,7 @@ function M.render()
         -- 6. Continue as rendering usual! :)
         render.enable_state(render.STATE_BLEND)
         render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
-        render.disable_state(render.STATE_CULL_FACE)
+        render.disable_state(render.STATE_CULL_FACE) --]]
     end
 end
 
@@ -92,6 +92,7 @@ function M.update(dt)
         if M.revert then
             offset = 1 - offset
         end
+        print("offset" .. offset)
         model.set_constant("main:/jester_stencil#model", "offset", vmath.vector4(offset, 1, 1, 1))
     end
 end
