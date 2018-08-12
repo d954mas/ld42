@@ -8,5 +8,5 @@ images {
   image: "/assets/images/computer_blick.png"
 }
 margin: 0
-extrude_borders: 0
+extrude_borders: 2
 inner_padding: 0
