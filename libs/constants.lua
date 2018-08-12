@@ -3,15 +3,15 @@ local M = {}
 M.CAMERA_WIDTH = 800
 M.CAMERA_HEIGHT = 480
 
-M.GAME_WIDTH = 1280
-M.GAME_HEIGHT = 720
+M.GAME_WIDTH = 1920
+M.GAME_HEIGHT = 1080
 M.GAME_ASPECT_W = M.GAME_WIDTH/M.GAME_HEIGHT
 M.GAME_ASPECT_H = M.GAME_HEIGHT/M.GAME_WIDTH
-M.GAME_SCALE = 0.6 --1  0 same width width - 1 same height . Min
-M.GAME_MOVE_X = 0.3 -- 0 free zone in right. 1 free zone in left
+M.GAME_SCALE = 0.5 --1  0 same width width - 1 same height . Min
+M.GAME_MOVE_X = 0.5 -- 0 free zone in right. 1 free zone in left
 
-M.GUI_WIDTH = 1280
-M.GUI_HEIGHT = 720
+M.GUI_WIDTH = 1920
+M.GUI_HEIGHT = 1080
 
 M.POWER_LAZER_Z = 0.5
 M.PLAYER_Z = 0.2

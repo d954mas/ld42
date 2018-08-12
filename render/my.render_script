@@ -12,15 +12,19 @@ local function update_game_projection(self)
     local aspect = window_height/window_width
     SCREEN_HELPER.real_width = window_width
     SCREEN_HELPER.real_height = window_height
-    if aspect> 3/4 then
-        local new_window_height = window_width*3/4
+    if aspect> 16/9 then
+        local new_window_height = window_width*9/16
         local dy = (window_height-new_window_height)/2
-        self.viewport = vmath.vector4(0,dy, window_width, new_window_height)
+        self.viewport = vmath.vector4(0,0, window_width, new_window_height)
         window_height = new_window_height
-    elseif aspect< 1125 /2436 then
-        local new_window_width = window_height*2436/1125
-        self.viewport = vmath.vector4(0,0, new_window_width, window_height )
+        self.dy = dy
+    elseif aspect< 16 /9 then
+        local new_window_width = window_height*16/9
+        local dx = (window_width-new_window_width)/2
+        self.viewport = vmath.vector4(dx/2,0, new_window_width+dx/2, window_height )
         window_width = new_window_width
+        self.window_width = new_window_width
+        self.dx = dx
     else
         self.viewport = nil
     end
@@ -35,8 +39,8 @@ local function set_view_projection(self, message_id, message)
 end	
 
 local function window_resized(self, message_id, message)
-    self.gui_projection = vmath.matrix4_orthographic(0, render.get_window_width(), 0, render.get_window_height(), -1, 1)
     update_game_projection(self)
+    self.gui_projection = vmath.matrix4_orthographic(self.dx/2 or 0, self.window_width + (self.dx or 0) , 0, SCREEN_HELPER.screen_height, -1, 1)
 end
 
 function init(self)
@@ -50,7 +54,7 @@ function init(self)
     self.view = vmath.matrix4()
     self.empty_view = vmath.matrix4()
     
-    self.gui_projection = vmath.matrix4_orthographic(0, render.get_window_width(), 0, render.get_window_height(), -1, 1)
+    self.gui_projection = vmath.matrix4_orthographic(0, 1920, 0, 1080, -1, 1)
     SCREEN_HELPER.init_count()
     update_game_projection(self)
 
