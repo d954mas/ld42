@@ -5,6 +5,7 @@ local INPUT = require "libs.input_receiver"
 local LUME = require "libs.lume"
 local ProgressBar = require "libs.progress_bar"
 local FLOW = require "libs.flow"
+local JESTER = require "Jester.jester"
 local ANIMATION_SHOW_TIME = 0.5
 local ANIMATION_HIDE_TIME = 0.8
 ---@class SelfGui1
@@ -125,6 +126,19 @@ local function update_hero_cells(self)
 end
 
 ---@param self SelfGui1
+local function show_message(self, title,text, btn_text, cb)
+    INPUT.acquire()
+    self.showing_message = true
+    self.showing_message_cb = cb
+    self.is_disk_sectors =  gui.is_enabled(gui.get_node("disk_sectors"), false)
+    gui.set_enabled(gui.get_node("disk_sectors"), false)
+    gui.set_enabled(gui.get_node("pc_message"), true)
+    gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), title)
+    gui.set_text(gui.get_node("pc_message_text"), text)
+    gui.set_text(gui.get_node("btn_msg_ok/label"), btn_text or "OK")
+end
+
+---@param self SelfGui1
 local function next_day(self)
     FLOW.start(function()
         INPUT.release()
@@ -159,11 +173,9 @@ local function next_day(self)
         end
         if angry == 2 then
             FLOW.delay(1.5)
-            msg.post("/gui#game_end_gui", HASHES.MSG_ENABLE)
-            msg.post("/gui#game_end_gui", "set_title", {title = "DESTROYED"})
+            show_message(self, "Game Over", "DESTROYED", "Restart", function () JESTER.reload() end)
+           -- msg.post("/gui#game_end_gui", "set_title", {title = "DESTROYED"})
         end
-
-        
         INPUT.acquire()
     end)
 
@@ -173,7 +185,7 @@ end
 local function on_input_btns(self, action_id, action)
     local group = GOOEY.group("group1", function()
         GOOEY.button("btn_ok", action_id, action, function(button)
-            WORLD:act({ self.disk_space[2], self.disk_space[3], self.disk_space[4] })
+            WORLD:act({ self.disk_space[2], self.disk_space[3], self.disk_space[4] }, self, show_message)
             next_day(self)
         end)
     end)
@@ -182,8 +194,9 @@ end
 
 ---@param self SelfGui1
 function init(self)
-    --INPUT.acquire()
+    INPUT.acquire()
     gui.set_color(gui.get_node("container_day"), vmath.vector4(1,1,1,0))
+    gui.set_enabled(gui.get_node("pc_crew_info"), false)
     WORLD:reset()
     self.ui = {
         { pie = gui.get_node("pie0/pie"),  line = gui.get_node("pie0/line"), drag = gui.get_node("pie0/drag_node") },
@@ -215,7 +228,11 @@ function init(self)
     self.station_hp = ProgressBar("progress_station")
     self.disk_space = WORLD.disk_space
     update_disk_space(self)
-    next_day(self)
+    update_station_hp(self)
+    update_hero_cells(self)
+    show_message(self, "Prepare", "Your ad can be here",nil, function ()
+        next_day(self)
+    end)
     self.pie_center = gui.get_position(gui.get_node("disk_sectors"))
 end
 
@@ -235,6 +252,28 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
+    if self.showing_message and action_id == HASHES.INPUT_TOUCH and  action.pressed then
+        if gui.pick_node(gui.get_node("btn_msg_ok/bg"), action.x, action.y) then
+            self.showing_message = false
+            if self.showing_message_cb then
+                if self.is_disk_sectors then
+                    gui.set_enabled(gui.get_node("disk_sectors"), true)
+                    gui.set_enabled(gui.get_node("pc_crew_info"), false)
+                    gui.set_enabled(gui.get_node("pc_message"), false)
+                    gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Disk Manager")
+                else
+                    gui.set_enabled(gui.get_node("disk_sectors"), false)
+                    gui.set_enabled(gui.get_node("pc_crew_info"), true)
+                    gui.set_enabled(gui.get_node("pc_message"), false)
+                    gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Crew Info")
+                end
+                    self.showing_message_cb()
+                    self.showing_message_cb = nil
+                end
+        end
+        return
+    end
+
     if on_input_btns(self, action_id, action) then
         return
     end
@@ -254,9 +293,11 @@ function on_input(self, action_id, action)
                 self.selected_drag_point = vmath.vector3(action.x, action.y, 0) - self.pie_center
             elseif gui.pick_node(gui.get_node("disk_manager"), action.x, action.y) then
                 gui.set_enabled(gui.get_node("disk_sectors"), true)
+                gui.set_enabled(gui.get_node("pc_crew_info"), false)
                 gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Disk Manager")
             elseif gui.pick_node(gui.get_node("crew_info"), action.x, action.y) then
                 gui.set_enabled(gui.get_node("disk_sectors"), false)
+                gui.set_enabled(gui.get_node("pc_crew_info"), true)
                 gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Crew Info")
             end
             --[[if self.selected_node then gui.set_size(self.ui[self.selected_node].pie, vmath.vector3(400,400,0)) end

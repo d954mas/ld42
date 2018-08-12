@@ -1,6 +1,7 @@
 local CLASS = require("libs.middleclass")
 local HEROES = require "scenes.game.model.heroes"
 local HASHES = require "libs.hashes"
+local JESTER = require "Jester.jester"
 ---@class World
 local World = CLASS.class("World")
 
@@ -10,21 +11,18 @@ function World:initialize()
     self:reset()
 end
 
-function World:act(disk_spaces)
+function World:act(disk_spaces, gui, fn)
     for i, hero in ipairs(self.heroes) do
         hero:act(disk_spaces[i])
     end
     self.days = self.days - 1
-    self:check()
+    self:check(gui, fn)
 end
-
-function World:check()
-    if self.days <= 0 then
-        msg.post("/gui#game_end_gui", HASHES.MSG_ENABLE)
-        msg.post("/gui#game_end_gui", "set_title", {title = "WIN"})
+function World:check(gui, show_message_fn)
+    if self.days <= 0  then
+        show_message_fn(gui, "WIN", "", "Restart", function() JESTER.reload() end)
     elseif self.station_hp <=0.000001 then
-        msg.post("/gui#game_end_gui", HASHES.MSG_ENABLE)
-        msg.post("/gui#game_end_gui", "set_title", {title = "LOSE, STATION DESTROYED"})
+        show_message_fn(gui, "Game Over", "Station destroyed", "Restart", function() JESTER.reload() end)
     end
 end
 
@@ -32,6 +30,7 @@ function World:change_system_space(system)
     local v = (1-system)/3
     self.disk_space = {system, v,v,v }
 end
+
 
 function World:reset()
     self.station_hp = 1
