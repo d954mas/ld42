@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d1ff737-2669-4421-ac70-4fec5f3687c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/defold_api1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LD42.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LD42.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/particles/emogy_happy.particlefx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/particles/emogy_happy.particlefx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/particles/emogy_sad.particlefx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/particles/emogy_sad.particlefx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/game.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/game.atlas" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/game/game_gui.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game_gui.gui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/game/gui_script.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/gui_script.gui_script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/hero_cell.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/hero_cell.gui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -102,8 +98,11 @@
       <file leaf-file-name="gui_script.gui_script" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="107" column="42" lean-forward="true" selection-start-line="107" selection-start-column="42" selection-end-line="108" selection-end-column="16" />
+            <state relative-caret-position="395">
+              <caret line="62" column="48" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
+              <folding>
+                <element signature="e#8695#9007#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -449,6 +448,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3360">
           <caret line="210" column="38" selection-start-line="210" selection-start-column="38" selection-end-line="210" selection-end-column="38" />
+          <folding>
+            <element signature="e#8695#9007#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -586,8 +588,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="107" column="42" lean-forward="true" selection-start-line="107" selection-start-column="42" selection-end-line="108" selection-end-column="16" />
+        <state relative-caret-position="395">
+          <caret line="62" column="48" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
+          <folding>
+            <element signature="e#8695#9007#0" />
+          </folding>
         </state>
       </provider>
     </entry>

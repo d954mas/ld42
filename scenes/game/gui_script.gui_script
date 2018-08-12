@@ -53,14 +53,14 @@ local function change_pie_value(self, node, value)
     local next_node = node + 1
 
     local delta = math.floor((value - self.disk_space[node]) * 100) / 100
-    if math.abs(delta) < 0.05 then
+    if math.abs(delta) < 0.02 then
         return
     end
-    delta = 0.05 * math.abs(delta) / delta
-    if self.disk_space[node] + delta < 0.00001 then
+    delta = 0.02 * math.abs(delta) / delta
+    if self.disk_space[node] + delta < 0.03001 then
         return
     end
-    if self.disk_space[next_node] - delta < 0.00001 then
+    if self.disk_space[next_node] - delta < 0.03001 then
         return
     end
     self.disk_space[node] = LUME.clamp(self.disk_space[node] + delta, 0.01, 1)
@@ -252,6 +252,12 @@ function on_input(self, action_id, action)
                 self.selected_node = 3
                 self.drag_start_angle = gui.get_fill_angle(self.ui[self.drag_node].pie)
                 self.selected_drag_point = vmath.vector3(action.x, action.y, 0) - self.pie_center
+            elseif gui.pick_node(gui.get_node("disk_manager"), action.x, action.y) then
+                gui.set_enabled(gui.get_node("disk_sectors"), true)
+                gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Disk Manager")
+            elseif gui.pick_node(gui.get_node("crew_info"), action.x, action.y) then
+                gui.set_enabled(gui.get_node("disk_sectors"), false)
+                gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Crew Info")
             end
             --[[if self.selected_node then gui.set_size(self.ui[self.selected_node].pie, vmath.vector3(400,400,0)) end
             self.selected_node = find_clicked_pie(self, action)

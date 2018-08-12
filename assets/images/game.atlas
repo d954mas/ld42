@@ -94,6 +94,12 @@ images {
 images {
   image: "/assets/images/emodgy radost.png"
 }
+images {
+  image: "/assets/images/pc_window.png"
+}
+images {
+  image: "/assets/images/processor.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
