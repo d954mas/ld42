@@ -64,6 +64,24 @@ images {
 images {
   image: "/assets/images/progress_bar.png"
 }
+images {
+  image: "/assets/images/enginer_bar.png"
+}
+images {
+  image: "/assets/images/medic_bar.png"
+}
+images {
+  image: "/assets/images/progress_bar.png"
+}
+images {
+  image: "/assets/images/scientist_bar.png"
+}
+images {
+  image: "/assets/images/circle.png"
+}
+images {
+  image: "/assets/images/transparent.png"
+}
 margin: 0
 extrude_borders: 2
-inner_padding: 0
+inner_padding: 2

@@ -7,12 +7,12 @@ function BaseModel:initialize(productivity_mul)
     self.max_productivity = 1
     self.max_happy = 1
     self.productivity = 0.5
-    self.happy = 0.5
+    self.happy = 1
 end
 
 function BaseModel:reset()
     self.productivity = 0.5
-    self.happy = 0.5
+    self.happy = 1
 end    
 
 ---@param number space_percent процент от диска
