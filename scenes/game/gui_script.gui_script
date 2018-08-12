@@ -18,7 +18,7 @@ local function update_disk_space(self)
     for i = 1, 4 do
         local space = self.disk_space[i]
         local ui = self.ui[i]
-        gui.set_text(ui.lbl, space)
+    --    gui.set_text(ui.lbl, space)
         gui.set_rotation(ui.pie, vmath.vector3(0, 0, rotation))
         gui.set_rotation(ui.line, vmath.vector3(0, 0, rotation))
         gui.set_rotation(ui.drag, vmath.vector3(0, 0, rotation))
@@ -181,10 +181,10 @@ function init(self)
     gui.set_color(gui.get_node("container_day"), vmath.vector4(1,1,1,0))
     WORLD:reset()
     self.ui = {
-        { pie = gui.get_node("pie0/pie"), lbl = gui.get_node("text0"), line = gui.get_node("pie0/line"), drag = gui.get_node("pie0/drag_node") },
-        { pie = gui.get_node("pie1/pie"), lbl = gui.get_node("text1"), line = gui.get_node("pie1/line"), drag = gui.get_node("pie1/drag_node") },
-        { pie = gui.get_node("pie2/pie"), lbl = gui.get_node("text2"), line = gui.get_node("pie2/line"), drag = gui.get_node("pie2/drag_node") },
-        { pie = gui.get_node("pie3/pie"), lbl = gui.get_node("text3"), line = gui.get_node("pie3/line"), drag = gui.get_node("pie3/drag_node") },
+        { pie = gui.get_node("pie0/pie"),  line = gui.get_node("pie0/line"), drag = gui.get_node("pie0/drag_node") },
+        { pie = gui.get_node("pie1/pie"),  line = gui.get_node("pie1/line"), drag = gui.get_node("pie1/drag_node") },
+        { pie = gui.get_node("pie2/pie"),  line = gui.get_node("pie2/line"), drag = gui.get_node("pie2/drag_node") },
+        { pie = gui.get_node("pie3/pie"),  line = gui.get_node("pie3/line"), drag = gui.get_node("pie3/drag_node") },
     }
     self.hero_cells = {
         { icon = gui.get_node("hero_1/icon"), bar = gui.get_node("hero_1/box1"),

@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d1ff737-2669-4421-ac70-4fec5f3687c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jester/stencil/stencil_render.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Jester/stencil/stencil_render.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/game.collection" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game.collection" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/game_scene.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game_scene.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/background.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/background_gui.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/background_gui.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/game_end_gui.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game_end_gui.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/game_gui.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game_gui.gui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/game/gui_script.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/gui_script.gui_script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/model/world.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/model/world.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,8 +89,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scenes/game/model/world.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+            <state relative-caret-position="34">
+              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -307,12 +306,12 @@
       <workItem from="1533676600972" duration="64000" />
       <workItem from="1533676696043" duration="2888000" />
       <workItem from="1533993681985" duration="14621000" />
-      <workItem from="1534075820170" duration="9248000" />
+      <workItem from="1534075820170" duration="9811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28311000" />
+    <option name="totallyTimeSpent" value="28874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -489,8 +488,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/model/world.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        <state relative-caret-position="34">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
         </state>
       </provider>
     </entry>

@@ -9,7 +9,7 @@ textures {
 }
 textures {
   name: "background"
-  texture: "/assets/images/background.atlas"
+  texture: "/assets/images/background_atlas.atlas"
 }
 textures {
   name: "background2"
