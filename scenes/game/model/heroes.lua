@@ -4,18 +4,18 @@ local M = {}
 ---@class Hero
 local BaseModel = CLASS.class("BaseModel")
 function BaseModel:initialize(mp, mh, pr, h, im, ip, tm, tp, imp, nh, np, need)
-    self.max_productivity = mp
-    self.max_happy = mh
-    self.productivity = pr
-    self.happy = h
-    self.irr_minus = im
-    self.irr_plus = ip
-    self.temp_minus = tm
-    self.temp_plus = tp
-    self.importance = imp
-    self.norm_happy = nh
-    self.norm_productivity = np
-    self.need_space = need
+    self.max_productivity = mp or 0
+    self.max_happy = mh or 0
+    self.productivity = pr or 0
+    self.happy = h or 0
+    self.irr_minus = im or 0
+    self.irr_plus = ip or 0
+    self.temp_minus = tm or 0
+    self.temp_plus = tp or 0
+    self.importance = imp or 0
+    self.norm_happy = nh or 0
+    self.norm_productivity = np or 0
+    self.need_space = need or 0
 end
 
 function BaseModel:reset()
