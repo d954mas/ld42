@@ -17,7 +17,8 @@ end
 
 ---@param number space_percent процент от диска
 function BaseModel:act(space_percent)
-    if space_percent >= 0.25 then
+    pprint(space_percent)
+    if space_percent >= 0.2499 then
         self.happy = self.happy + 0.1
     else
         self.happy = self.happy - 0.1

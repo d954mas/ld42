@@ -23,8 +23,8 @@ background_color {
 }
 nodes {
   position {
-    x: 658.0
-    y: 411.0
+    x: 486.0
+    y: 371.0
     z: 0.0
     w: 1.0
   }
@@ -619,9 +619,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 0.0
-    y: 0.2
-    z: 0.0
+    x: 0.23529412
+    y: 0.72156864
+    z: 0.47058824
     w: 1.0
   }
   type: TYPE_BOX
@@ -989,9 +989,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 0.0
-    y: 0.101960786
-    z: 0.5019608
+    x: 0.47058824
+    y: 0.28627452
+    z: 0.8901961
     w: 1.0
   }
   type: TYPE_BOX
@@ -1358,9 +1358,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 0.6
-    y: 0.3019608
-    z: 0.0
+    x: 0.7764706
+    y: 0.41960785
+    z: 0.15686275
     w: 1.0
   }
   type: TYPE_BOX
@@ -1919,7 +1919,7 @@ nodes {
 }
 nodes {
   position {
-    x: 954.0
+    x: 786.0
     y: 218.0
     z: 0.0
     w: 1.0
@@ -2078,7 +2078,7 @@ nodes {
 }
 nodes {
   position {
-    x: 1773.0
+    x: 1750.0
     y: 894.0
     z: 0.0
     w: 1.0
@@ -2395,8 +2395,8 @@ nodes {
 }
 nodes {
   position {
-    x: -532.0
-    y: -67.0
+    x: -539.0
+    y: -60.0
     z: 0.0
     w: 1.0
   }
@@ -2445,6 +2445,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 1
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
 }
@@ -3480,7 +3481,7 @@ nodes {
   }
   size {
     x: 724.0
-    y: 244.0
+    y: 238.0
     z: 0.0
     w: 1.0
   }
@@ -3492,7 +3493,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "game/enginer_bar"
+  texture: "game/scientist_bar"
   id: "hero_3/box1"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -3511,6 +3512,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 9
   template_node_child: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -3629,7 +3631,7 @@ nodes {
 nodes {
   position {
     x: -532.0
-    y: -67.0
+    y: -65.0
     z: 0.0
     w: 1.0
   }
@@ -3678,6 +3680,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 1
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
 }
@@ -4134,7 +4137,7 @@ nodes {
 }
 nodes {
   position {
-    x: 750.0
+    x: 520.0
     y: 348.0
     z: 0.0
     w: 1.0
