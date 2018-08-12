@@ -103,6 +103,7 @@ local function update_hero_cells(self)
             else
                 fx = "particle_neitral"
             end
+            hero.prev_happy = hero.happy
 
             gui.play_particlefx(gui.get_node("hero_" .. i .. "/" .. fx))
         else
@@ -126,6 +127,8 @@ local function update_hero_cells(self)
         gui.set_enabled(self["austranaut_" .. i], false)
         gui.play_flipbook(self["lever_" .. i], "lever_off")
     end
+
+    gui.set_text(gui.get_node("lbl_days"), WORLD.days)
 end
 
 ---@param self SelfGui1
