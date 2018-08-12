@@ -1,7 +1,7 @@
 emitters {
   id: "emitter"
   mode: PLAY_MODE_ONCE
-  duration: 1.0
+  duration: 0.1
   space: EMISSION_SPACE_WORLD
   position {
     x: 0.0
@@ -17,7 +17,7 @@ emitters {
   tile_source: "/assets/images/game.atlas"
   animation: "emodgy grust"
   material: "/builtins/materials/particlefx.material"
-  blend_mode: BLEND_MODE_ADD
+  blend_mode: BLEND_MODE_ALPHA
   particle_orientation: PARTICLE_ORIENTATION_DEFAULT
   inherit_velocity: 0.0
   max_particle_count: 1
@@ -67,7 +67,7 @@ emitters {
     key: EMITTER_KEY_PARTICLE_LIFE_TIME
     points {
       x: 0.0
-      y: 2.5
+      y: 1.5
       t_x: 1.0
       t_y: 0.0
     }
@@ -77,7 +77,7 @@ emitters {
     key: EMITTER_KEY_PARTICLE_SPEED
     points {
       x: 0.0
-      y: 50.0
+      y: 155.0
       t_x: 1.0
       t_y: 0.0
     }
@@ -203,15 +203,9 @@ emitters {
     key: PARTICLE_KEY_ALPHA
     points {
       x: 0.0
-      y: 6.373134
+      y: 1.0
       t_x: 1.0
       t_y: 0.0
-    }
-    points {
-      x: 1.0
-      y: 0.104477614
-      t_x: 0.05943731
-      t_y: -0.99823207
     }
   }
   particle_properties {

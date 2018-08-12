@@ -99,15 +99,20 @@ local function update_hero_cells(self)
         if hero.prev_happy then
             local dt =  hero.happy - hero.prev_happy
             local fx
+            local emogy_str
             if dt > 0.0001 then
                 fx = "particle_happy"
+                emogy_str = "emodgy radost"
             elseif dt < -0.0001 then
                 fx = "particle_sad"
+                emogy_str = "emodgy grust"
             else
                 fx = "particle_neitral"
+                emogy_str = "emodgy neitral"
             end
             hero.prev_happy = hero.happy
-
+            gui.play_flipbook(hero_cell.emogy, "transparent")
+            timer.delay(1.5, false, function()  gui.play_flipbook(hero_cell.emogy, emogy_str) end)
             gui.play_particlefx(gui.get_node("hero_" .. i .. "/" .. fx))
         else
             hero.prev_happy = hero.happy
@@ -189,15 +194,15 @@ function init(self)
     self.hero_cells = {
         { icon = gui.get_node("hero_1/icon"), bar = gui.get_node("hero_1/box1"),
           progress_h = ProgressBar("hero_1/progress_happy"), progress_p = ProgressBar("hero_1/progress_productivity"),
-          face = gui.get_node("hero_1/face") },
+        face = gui.get_node("hero_1/face") ,emogy = gui.get_node("hero_1/emogy")},
         {
             icon = gui.get_node("hero_2/icon"), bar = gui.get_node("hero_2/box1"),
             progress_h = ProgressBar("hero_2/progress_happy"), progress_p = ProgressBar("hero_2/progress_productivity"),
-            face = gui.get_node("hero_2/face") },
+            face = gui.get_node("hero_2/face"),emogy = gui.get_node("hero_2/emogy") },
         {
             icon = gui.get_node("hero_3/icon"), bar = gui.get_node("hero_3/box1"),
             progress_h = ProgressBar("hero_3/progress_happy"), progress_p = ProgressBar("hero_3/progress_productivity"),
-            face = gui.get_node("hero_3/face") }
+            face = gui.get_node("hero_3/face"),emogy = gui.get_node("hero_3/emogy") }
     }
     self.drag_node_1 = gui.get_node("pie2/drag_node")
     self.drag_node_2 = gui.get_node("pie3/drag_node")
