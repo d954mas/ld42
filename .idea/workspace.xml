@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d1ff737-2669-4421-ac70-4fec5f3687c5" name="Default Changelist" comment="change max days">
+    <list default="true" id="8d1ff737-2669-4421-ac70-4fec5f3687c5" name="Default Changelist" comment="change space message">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/game_gui.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game_gui.gui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/model/world.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/model/world.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.appmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.appmanifest" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,8 +78,8 @@
       <file leaf-file-name="world.lua" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scenes/game/model/world.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+            <state relative-caret-position="194">
+              <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -97,8 +96,8 @@
       <file leaf-file-name="gui_script.gui_script" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="965">
-              <caret line="126" column="53" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
+            <state relative-caret-position="258">
+              <caret line="104" column="37" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -189,6 +188,7 @@
       <find>lbl_days</find>
       <find>current_day</find>
       <find>lbl_day</find>
+      <find>prev</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -533,7 +533,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534195439779</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="cah play">
+      <created>1534196525414</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1534196525414</updated>
+    </task>
+    <task id="LOCAL-00009" summary="change space message">
+      <created>1534196790935</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1534196790935</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -541,7 +555,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1040" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -553,11 +566,11 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="bottom" id="LuaCheck" order="7" weight="0.32899022" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.33296582" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" weight="0.32790446" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.33296582" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" weight="0.32745314" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12831858" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12831858" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -663,7 +676,9 @@
     <MESSAGE value="fix changing system space" />
     <MESSAGE value="show station hp background" />
     <MESSAGE value="change max days" />
-    <option name="LAST_COMMIT_MESSAGE" value="change max days" />
+    <MESSAGE value="cah play" />
+    <MESSAGE value="change space message" />
+    <option name="LAST_COMMIT_MESSAGE" value="change space message" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Jester/proxy_scene.lua">
@@ -977,13 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="965">
-          <caret line="126" column="53" selection-start-line="126" selection-start-column="53" selection-end-line="126" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/model/heroes.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
@@ -998,10 +1006,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="104" column="37" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/model/world.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
+        <state relative-caret-position="194">
+          <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
         </state>
       </provider>
     </entry>
