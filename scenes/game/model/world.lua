@@ -48,7 +48,7 @@ function World:act(disk_spaces, gui, fn)
     self.days = self.days - 1
     self.current_day = self.current_day +1
     if self.days == 13 then
-        self:change_system_space(0.9)
+        self:change_system_space(0.9, "NO SPACE", gui, fn )
     end
 
     if not self:check(gui, fn) and self.current_day % 3 == 0 then
@@ -68,12 +68,13 @@ function World:check(gui, show_message_fn)
     return false
 end
 
-function World:change_system_space(system)
+function World:change_system_space(system, title, gui , fn)
     local v = (1-system)/3
     self.disk_space[1] = system
     self.disk_space[2] = v
     self.disk_space[3] = v
     self.disk_space[4] = v
+    fn(gui, "Event", title, "ok", function ()  end)
 end
 
 
