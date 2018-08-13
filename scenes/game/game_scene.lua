@@ -11,7 +11,7 @@ function Scene:initialize()
 end
 
 function Scene:on_show(input)
-    msg.post("/gui#game_end_gui", HASHES.MSG_DISABLE)
+ --   msg.post("/gui#game_end_gui", HASHES.MSG_DISABLE)
 end
 
 function Scene:final(go_self)

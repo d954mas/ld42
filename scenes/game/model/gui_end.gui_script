@@ -8,21 +8,10 @@ local FLOW = require "libs.flow"
 local JESTER = require "Jester.jester"
 
 ---@param self SelfGui1
-local function on_input_btns(self, action_id, action)
-    local group = GOOEY.group("group1", function()
-        GOOEY.button("btn_restart", action_id, action, function(button)
-            JESTER.reload()
-        end)
-    end)
-    return group.consumed
-end
-
----@param self SelfGui1
 function init(self)
 end
 
 function final(self)
-    INPUT.release()
 end
 
 function update(self, dt)
@@ -31,15 +20,18 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-    if message_id == hash("set_title") then
+    pprint(message_id)
+    if message_id == hash("show") then
         INPUT.acquire()
-        gui.set_text(gui.get_node("lbl"), message.title)
+        gui.set_enabled(gui.get_node("box"), true)
     end
 end
 
 function on_input(self, action_id, action)
-    if on_input_btns(self, action_id, action) then
-        return
+    pprint(action_id)
+    if action_id == HASHES.INPUT_TOUCH and action.pressed then
+        INPUT.release()
+        gui.set_enabled(gui.get_node("box"), false)
     end
     return true
 end

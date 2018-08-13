@@ -246,6 +246,7 @@ function init(self)
     update_disk_space(self)
     update_station_hp(self)
     update_hero_cells(self)
+    msg.post("/gui1#game_end_gui", "show")
     show_message(self, "Prepare", "Your ad can be here", nil, function()
         next_day(self)
     end)
@@ -333,6 +334,9 @@ function on_input(self, action_id, action)
                 gui.set_enabled(gui.get_node("pc_hero_2_info"), false)
                 gui.set_enabled(gui.get_node("pc_hero_3_info"), true)
                 gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Scientist Info")
+            elseif gui.pick_node(gui.get_node("help"), action.x, action.y) then
+                print("help")
+                msg.post("/gui1#game_end_gui", "show")
             end
             --[[if self.selected_node then gui.set_size(self.ui[self.selected_node].pie, vmath.vector3(400,400,0)) end
             self.selected_node = find_clicked_pie(self, action)
