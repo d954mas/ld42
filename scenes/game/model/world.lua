@@ -12,10 +12,16 @@ function World:initialize()
 end
 
 function World:act(disk_spaces, gui, fn)
+    local params = {}
     for i, hero in ipairs(self.heroes) do
         hero:act(disk_spaces[i])
+        params[i] = hero.my_param
     end
+    self.station_hp = self.station_hp - (params[1] + params[2] + params[3])
     self.days = self.days - 1
+    if self.days == 13 then
+        self:change_system_space(0.9)
+    end
     self:check(gui, fn)
 end
 function World:check(gui, show_message_fn)
