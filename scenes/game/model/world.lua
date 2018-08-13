@@ -48,7 +48,11 @@ function World:act(disk_spaces, gui, fn)
     self.days = self.days - 1
     self.current_day = self.current_day +1
     if self.days == 13 then
-        self:change_system_space(0.9, "NO SPACE", gui, fn )
+        self:change_system_space(0.45, "New missile launch codes came from the Earth. The place occupied by the system has increased.", gui, fn )
+    elseif self.days == 10 then
+        self:change_system_space(0.55, "New missile launch codes came from the Earth. The place occupied by the system has increased.", gui, fn )
+    elseif self.days == 4 then
+        self:change_system_space(0.70, "New missile launch codes came from the Earth. The place occupied by the system has increased.", gui, fn )
     end
 
     if not self:check(gui, fn) and self.current_day % 3 == 0 then
