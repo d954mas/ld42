@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d1ff737-2669-4421-ac70-4fec5f3687c5" name="Default Changelist" comment="wip">
-      <change afterPath="$PROJECT_DIR$/assets/images/Безымянный.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/constants.lua" beforeDir="false" afterPath="$PROJECT_DIR$/libs/constants.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/render/my.render_script" beforeDir="false" afterPath="$PROJECT_DIR$/render/my.render_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/game_gui.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game_gui.gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/gui_script.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/gui_script.gui_script" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gui_script.gui_script" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gui_script.gui_script" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="122" column="71" selection-start-line="122" selection-start-column="71" selection-end-line="122" selection-end-column="71" />
+            <state relative-caret-position="181">
+              <caret line="213" column="43" selection-start-line="213" selection-start-column="43" selection-end-line="213" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -107,8 +106,8 @@
       <file leaf-file-name="game_scene.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scenes/game/game_scene.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="175">
+              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -116,17 +115,17 @@
       <file leaf-file-name="stencil_render.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Jester/stencil/stencil_render.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="845">
-              <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
+            <state relative-caret-position="212">
+              <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my.render_script" pinned="false" current-in-tab="true">
+      <file leaf-file-name="my.render_script" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/render/my.render_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="42" column="88" selection-start-line="42" selection-start-column="88" selection-end-line="42" selection-end-column="88" />
+            <state relative-caret-position="740">
+              <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -140,20 +139,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="init_controller.script" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/init_controller.script">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="constants.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/constants.lua">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
               <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="init_controller.script" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/init_controller.script">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -180,6 +179,10 @@
       <find>init</find>
       <find>show</find>
       <find>show_</find>
+      <find>dis</find>
+      <find>disk_sec</find>
+      <find>is_disk_sectors</find>
+      <find>pc_hero_1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,11 +199,11 @@
         <option value="$PROJECT_DIR$/Jester/stencil/stencil_render.lua" />
         <option value="$PROJECT_DIR$/scenes/game/model/gui_end.gui_script" />
         <option value="$PROJECT_DIR$/scenes/game/game_scene.lua" />
-        <option value="$PROJECT_DIR$/scenes/game/gui_script.gui_script" />
         <option value="$PROJECT_DIR$/scenes/game/model/world.lua" />
         <option value="$PROJECT_DIR$/libs/constants.lua" />
         <option value="$PROJECT_DIR$/scenes/game/model/heroes.lua" />
         <option value="$PROJECT_DIR$/render/my.render_script" />
+        <option value="$PROJECT_DIR$/scenes/game/gui_script.gui_script" />
       </list>
     </option>
   </component>
@@ -216,11 +219,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="97" />
-    <option name="y" value="-16" />
-    <option name="width" value="1346" />
-    <option name="height" value="688" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="1752" />
+    <option name="height" value="955" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -497,52 +499,73 @@
     <option name="totallyTimeSpent" value="28874000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1934" height="1054" extended-state="6" />
+    <frame x="-8" y="0" width="1752" height="955" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50074404" side_tool="true" weight="0.3289689" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info anchor="bottom" id="LuaCheck" order="7" />
+      <window_info anchor="bottom" id="LuaCheck" order="7" weight="0.32899022" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32790446" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3673966" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" weight="0.32790446" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2454739" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27181605" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="LuaCheck" order="7" />
+      <window_info id="Designer" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2454739" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32790446" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50074404" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" weight="0.3289689" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info id="Favorites" order="6" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="LuaCheck" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3289689" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -552,9 +575,9 @@
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50074404" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="5" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
@@ -597,6 +620,99 @@
     <option name="LAST_COMMIT_MESSAGE" value="wip" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/model/model.lua" />
+    <entry file="jar://$PROJECT_DIR$/../defold_api.zip!/api/vector_math.lua" />
+    <entry file="file://$PROJECT_DIR$/Jester/proxy_scene.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Jester/scene.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/progress_bar.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/model/world.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Jester/stencil/stencil_render.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/game_scene.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/model/gui_end.gui_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="49" column="3" selection-start-line="49" selection-start-column="3" selection-end-line="49" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="125" column="3" selection-start-line="125" selection-start-column="3" selection-end-line="125" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/screen_helper.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/constants.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/model/heroes.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/render/my.render_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init_controller.script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/model/heroes.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -763,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/init_controller.script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="149">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -777,15 +893,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Jester/stencil/stencil_render.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="845">
-          <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
+        <state relative-caret-position="212">
+          <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/game_scene.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="175">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -793,13 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="49" column="3" selection-start-line="49" selection-start-column="3" selection-end-line="49" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="122" column="71" selection-start-line="122" selection-start-column="71" selection-end-line="122" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -826,8 +935,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/render/my.render_script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="42" column="88" selection-start-line="42" selection-start-column="88" selection-end-line="42" selection-end-column="88" />
+        <state relative-caret-position="740">
+          <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/gui_script.gui_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="213" column="43" selection-start-line="213" selection-start-column="43" selection-end-line="213" selection-end-column="43" />
         </state>
       </provider>
     </entry>

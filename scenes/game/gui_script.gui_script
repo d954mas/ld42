@@ -19,7 +19,7 @@ local function update_disk_space(self)
     for i = 1, 4 do
         local space = self.disk_space[i]
         local ui = self.ui[i]
-    --    gui.set_text(ui.lbl, space)
+        --    gui.set_text(ui.lbl, space)
         gui.set_rotation(ui.pie, vmath.vector3(0, 0, rotation))
         gui.set_rotation(ui.line, vmath.vector3(0, 0, rotation))
         gui.set_rotation(ui.drag, vmath.vector3(0, 0, rotation))
@@ -98,7 +98,7 @@ local function update_hero_cells(self)
             end
         end
         if hero.prev_happy then
-            local dt =  hero.happy - hero.prev_happy
+            local dt = hero.happy - hero.prev_happy
             local fx
             local emogy_str
             if dt > 0.0001 then
@@ -113,7 +113,9 @@ local function update_hero_cells(self)
             end
             hero.prev_happy = hero.happy
             gui.play_flipbook(hero_cell.emogy, "transparent")
-            timer.delay(1.5, false, function()  gui.play_flipbook(hero_cell.emogy, emogy_str) end)
+            timer.delay(1.5, false, function()
+                gui.play_flipbook(hero_cell.emogy, emogy_str)
+            end)
             gui.play_particlefx(gui.get_node("hero_" .. i .. "/" .. fx))
         else
             hero.prev_happy = hero.happy
@@ -126,12 +128,22 @@ local function update_hero_cells(self)
 end
 
 ---@param self SelfGui1
-local function show_message(self, title,text, btn_text, cb)
+local function show_message(self, title, text, btn_text, cb)
     INPUT.acquire()
     self.showing_message = true
     self.showing_message_cb = cb
-    self.is_disk_sectors =  gui.is_enabled(gui.get_node("disk_sectors"), false)
+    self.selected_screen = 1
+    if gui.is_enabled(gui.get_node("pc_hero_1_info")) then
+        self.selected_screen = 2
+    elseif gui.is_enabled(gui.get_node("pc_hero_2_info")) then
+        self.selected_screen = 3
+    elseif gui.is_enabled(gui.get_node("pc_hero_3_info")) then
+        self.selected_screen = 4
+    end
     gui.set_enabled(gui.get_node("disk_sectors"), false)
+    gui.set_enabled(gui.get_node("pc_hero_1_info"), false)
+    gui.set_enabled(gui.get_node("pc_hero_2_info"), false)
+    gui.set_enabled(gui.get_node("pc_hero_3_info"), false)
     gui.set_enabled(gui.get_node("pc_message"), true)
     gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), title)
     gui.set_text(gui.get_node("pc_message_text"), text)
@@ -145,7 +157,7 @@ local function next_day(self)
         update_station_hp(self)
         update_hero_cells(self)
         gui.set_text(gui.get_node("lbl_day"), "DAY:" .. 16 - WORLD.days)
-        gui.animate(gui.get_node("container_day"), "color.w", 1, gui.EASING_LINEAR, 2,0,nil,gui.PLAYBACK_ONCE_PINGPONG)
+        gui.animate(gui.get_node("container_day"), "color.w", 1, gui.EASING_LINEAR, 2, 0, nil, gui.PLAYBACK_ONCE_PINGPONG)
         FLOW.delay(2)
         local angry = 0
         for _, hero in ipairs(WORLD.heroes) do
@@ -173,8 +185,10 @@ local function next_day(self)
         end
         if angry == 2 then
             FLOW.delay(1.5)
-            show_message(self, "Game Over", "DESTROYED", "Restart", function () JESTER.reload() end)
-           -- msg.post("/gui#game_end_gui", "set_title", {title = "DESTROYED"})
+            show_message(self, "Game Over", "DESTROYED", "Restart", function()
+                JESTER.reload()
+            end)
+            -- msg.post("/gui#game_end_gui", "set_title", {title = "DESTROYED"})
         end
         INPUT.acquire()
     end)
@@ -195,27 +209,29 @@ end
 ---@param self SelfGui1
 function init(self)
     INPUT.acquire()
-    gui.set_color(gui.get_node("container_day"), vmath.vector4(1,1,1,0))
-    gui.set_enabled(gui.get_node("pc_crew_info"), false)
+    gui.set_color(gui.get_node("container_day"), vmath.vector4(1, 1, 1, 0))
+    gui.set_enabled(gui.get_node("pc_hero_1_info"), false)
+    gui.set_enabled(gui.get_node("pc_hero_2_info"), false)
+    gui.set_enabled(gui.get_node("pc_hero_3_info"), false)
     WORLD:reset()
     self.ui = {
-        { pie = gui.get_node("pie0/pie"),  line = gui.get_node("pie0/line"), drag = gui.get_node("pie0/drag_node") },
-        { pie = gui.get_node("pie1/pie"),  line = gui.get_node("pie1/line"), drag = gui.get_node("pie1/drag_node") },
-        { pie = gui.get_node("pie2/pie"),  line = gui.get_node("pie2/line"), drag = gui.get_node("pie2/drag_node") },
-        { pie = gui.get_node("pie3/pie"),  line = gui.get_node("pie3/line"), drag = gui.get_node("pie3/drag_node") },
+        { pie = gui.get_node("pie0/pie"), line = gui.get_node("pie0/line"), drag = gui.get_node("pie0/drag_node") },
+        { pie = gui.get_node("pie1/pie"), line = gui.get_node("pie1/line"), drag = gui.get_node("pie1/drag_node") },
+        { pie = gui.get_node("pie2/pie"), line = gui.get_node("pie2/line"), drag = gui.get_node("pie2/drag_node") },
+        { pie = gui.get_node("pie3/pie"), line = gui.get_node("pie3/line"), drag = gui.get_node("pie3/drag_node") },
     }
     self.hero_cells = {
         { icon = gui.get_node("hero_1/icon"), bar = gui.get_node("hero_1/box1"),
           progress_h = ProgressBar("hero_1/progress_happy"), progress_p = ProgressBar("hero_1/progress_productivity"),
-        face = gui.get_node("hero_1/face") ,emogy = gui.get_node("hero_1/emogy")},
+          face = gui.get_node("hero_1/face"), emogy = gui.get_node("hero_1/emogy") },
         {
             icon = gui.get_node("hero_2/icon"), bar = gui.get_node("hero_2/box1"),
             progress_h = ProgressBar("hero_2/progress_happy"), progress_p = ProgressBar("hero_2/progress_productivity"),
-            face = gui.get_node("hero_2/face"),emogy = gui.get_node("hero_2/emogy") },
+            face = gui.get_node("hero_2/face"), emogy = gui.get_node("hero_2/emogy") },
         {
             icon = gui.get_node("hero_3/icon"), bar = gui.get_node("hero_3/box1"),
             progress_h = ProgressBar("hero_3/progress_happy"), progress_p = ProgressBar("hero_3/progress_productivity"),
-            face = gui.get_node("hero_3/face"),emogy = gui.get_node("hero_3/emogy") }
+            face = gui.get_node("hero_3/face"), emogy = gui.get_node("hero_3/emogy") }
     }
     self.drag_node_1 = gui.get_node("pie2/drag_node")
     self.drag_node_2 = gui.get_node("pie3/drag_node")
@@ -230,7 +246,7 @@ function init(self)
     update_disk_space(self)
     update_station_hp(self)
     update_hero_cells(self)
-    show_message(self, "Prepare", "Your ad can be here",nil, function ()
+    show_message(self, "Prepare", "Your ad can be here", nil, function()
         next_day(self)
     end)
     self.pie_center = gui.get_position(gui.get_node("disk_sectors"))
@@ -252,24 +268,26 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-    if self.showing_message and action_id == HASHES.INPUT_TOUCH and  action.pressed then
+    if self.showing_message and action_id == HASHES.INPUT_TOUCH and action.pressed then
         if gui.pick_node(gui.get_node("btn_msg_ok/bg"), action.x, action.y) then
             self.showing_message = false
             if self.showing_message_cb then
-                if self.is_disk_sectors then
-                    gui.set_enabled(gui.get_node("disk_sectors"), true)
-                    gui.set_enabled(gui.get_node("pc_crew_info"), false)
-                    gui.set_enabled(gui.get_node("pc_message"), false)
-                    gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Disk Manager")
-                else
-                    gui.set_enabled(gui.get_node("disk_sectors"), false)
-                    gui.set_enabled(gui.get_node("pc_crew_info"), true)
-                    gui.set_enabled(gui.get_node("pc_message"), false)
-                    gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Crew Info")
+                gui.set_enabled(gui.get_node("disk_sectors"), true)
+                gui.set_enabled(gui.get_node("pc_message"), false)
+                gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Disk Manager")
+                if self.selected_screen == 2 then
+                    gui.set_enabled(gui.get_node("pc_hero_2_info"), true)
+                    gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Medic Info")
+                elseif self.selected_screen == 3 then
+                    gui.set_enabled(gui.get_node("pc_hero_2_info"), true)
+                    gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Engineer Info")
+                elseif self.selected_screen == 4 then
+                    gui.set_enabled(gui.get_node("pc_hero_3_info"), true)
+                    gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Scientist Info")
                 end
-                    self.showing_message_cb()
-                    self.showing_message_cb = nil
-                end
+                self.showing_message_cb()
+                self.showing_message_cb = nil
+            end
         end
         return
     end
@@ -293,12 +311,28 @@ function on_input(self, action_id, action)
                 self.selected_drag_point = vmath.vector3(action.x, action.y, 0) - self.pie_center
             elseif gui.pick_node(gui.get_node("disk_manager"), action.x, action.y) then
                 gui.set_enabled(gui.get_node("disk_sectors"), true)
-                gui.set_enabled(gui.get_node("pc_crew_info"), false)
+                gui.set_enabled(gui.get_node("pc_hero_1_info"), false)
+                gui.set_enabled(gui.get_node("pc_hero_2_info"), false)
+                gui.set_enabled(gui.get_node("pc_hero_3_info"), false)
                 gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Disk Manager")
-            elseif gui.pick_node(gui.get_node("crew_info"), action.x, action.y) then
+            elseif gui.pick_node(gui.get_node("hero_1_info"), action.x, action.y) then
                 gui.set_enabled(gui.get_node("disk_sectors"), false)
-                gui.set_enabled(gui.get_node("pc_crew_info"), true)
-                gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Crew Info")
+                gui.set_enabled(gui.get_node("pc_hero_1_info"), true)
+                gui.set_enabled(gui.get_node("pc_hero_2_info"), false)
+                gui.set_enabled(gui.get_node("pc_hero_3_info"), false)
+                gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Medic Info")
+            elseif gui.pick_node(gui.get_node("hero_2_info"), action.x, action.y) then
+                gui.set_enabled(gui.get_node("disk_sectors"), false)
+                gui.set_enabled(gui.get_node("pc_hero_1_info"), false)
+                gui.set_enabled(gui.get_node("pc_hero_2_info"), true)
+                gui.set_enabled(gui.get_node("pc_hero_3_info"), false)
+                gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Engineer Info")
+            elseif gui.pick_node(gui.get_node("hero_3_info"), action.x, action.y) then
+                gui.set_enabled(gui.get_node("disk_sectors"), false)
+                gui.set_enabled(gui.get_node("pc_hero_1_info"), false)
+                gui.set_enabled(gui.get_node("pc_hero_2_info"), false)
+                gui.set_enabled(gui.get_node("pc_hero_3_info"), true)
+                gui.set_text(gui.get_node("pc_disk_manager/lbl_title"), "Scientist Info")
             end
             --[[if self.selected_node then gui.set_size(self.ui[self.selected_node].pie, vmath.vector3(400,400,0)) end
             self.selected_node = find_clicked_pie(self, action)
