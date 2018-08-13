@@ -1,3 +1,4 @@
+local WORLD = require "scenes.game.model.world"
 function init(self)
 	gui.set_enabled(gui.get_node("dirty"), false)
 	gui.set_enabled(gui.get_node("damage"), false)
@@ -9,17 +10,15 @@ function final(self)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
-end
 
-function on_message(self, message_id, message, sender)
-	if message_id == "show_dirty" then
-		gui.set_enabled(gui.get_node("dirty"), false)
-	elseif message_id == "show_damage" then
-		gui.set_enabled(gui.get_node("damage"), false)
+	if WORLD.station_hp <= 0.6 then
+		gui.set_enabled(gui.get_node("dirty"), true)
+	end
+	if WORLD.station_hp <= 0.3 then
+		gui.set_enabled(gui.get_node("damage"), true)
 	end
 end
+
 
 function on_input(self, action_id, action)
 	-- Add input-handling code here

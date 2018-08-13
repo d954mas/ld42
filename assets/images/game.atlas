@@ -103,6 +103,9 @@ images {
 images {
   image: "/assets/images/vopros.png"
 }
+images {
+  image: "/assets/images/nosok.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
