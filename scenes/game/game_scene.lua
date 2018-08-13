@@ -22,7 +22,7 @@ function Scene:update(go_self, dt)
 end
 
 function Scene:show_out(co)
-    STENCIL.show(2, false, true)
+    STENCIL.show(2, false, false)
     FLOW.start(function()
         FLOW.frames(1)
         coroutine.resume(co)

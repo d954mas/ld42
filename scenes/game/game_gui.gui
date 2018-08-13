@@ -5931,8 +5931,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
+    x: -6.0
+    y: -39.0
     z: 0.0
     w: 1.0
   }
@@ -6093,8 +6093,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 214.0
+    x: -17.0
+    y: 242.0
     z: 0.0
     w: 1.0
   }
@@ -6111,7 +6111,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
+    x: 420.0
     y: 100.0
     z: 0.0
     w: 1.0
@@ -6124,7 +6124,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: " sssssssssssssssssssssssss s s s ssssss ss s s s s s "
+  text: " sssssssss  ssss s s sss sssss ss s s s ssssss ss s s s s s "
   font: "roboto_regular"
   id: "pc_message_text"
   xanchor: XANCHOR_NONE
