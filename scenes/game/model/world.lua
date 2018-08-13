@@ -5,6 +5,11 @@ local JESTER = require "Jester.jester"
 ---@class World
 local World = CLASS.class("World")
 
+
+local events = {
+    {}
+}
+
 function World:initialize()
     ---@type Hero[]
     self.heroes = {HEROES.hero_1, HEROES.hero_2, HEROES.hero_3}
@@ -19,6 +24,7 @@ function World:act(disk_spaces, gui, fn)
     end
     self.station_hp = self.station_hp - (params[1] + params[2] + params[3])
     self.days = self.days - 1
+    self.current_day = self.current_day +1
     if self.days == 13 then
         self:change_system_space(0.9)
     end
@@ -44,6 +50,7 @@ end
 function World:reset()
     self.station_hp = 1
     self.days = 15
+    self.current_day = 0
     for i, hero in ipairs(self.heroes) do
         hero:reset()
     end
