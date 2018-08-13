@@ -34,7 +34,10 @@ end
 
 function World:change_system_space(system)
     local v = (1-system)/3
-    self.disk_space = {system, v,v,v }
+    self.disk_space[1] = system
+    self.disk_space[2] = v
+    self.disk_space[3] = v
+    self.disk_space[4] = v
 end
 
 
