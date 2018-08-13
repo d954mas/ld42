@@ -6228,7 +6228,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
+    x: 300.0
     y: 100.0
     z: 0.0
     w: 1.0
@@ -6241,7 +6241,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Your crew info"
+  text: "Medic. Cheerful .Productive. Importance for the team: medium."
   font: "roboto_regular"
   id: "lbl_pc_crew_info_1"
   xanchor: XANCHOR_NONE
@@ -6345,7 +6345,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
+    x: 300.0
     y: 100.0
     z: 0.0
     w: 1.0
@@ -6358,7 +6358,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Your crew info"
+  text: "Engineer. Restrained. Demand: average. Importance for the team: above average."
   font: "roboto_regular"
   id: "lbl_pc_crew_info_2"
   xanchor: XANCHOR_NONE
@@ -6462,7 +6462,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
+    x: 300.0
     y: 100.0
     z: 0.0
     w: 1.0
@@ -6475,7 +6475,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Your crew info"
+  text: "Scientist. Quick-tempered. Demanding: average. Importance for the team: high."
   font: "roboto_regular"
   id: "lbl_pc_crew_info_3"
   xanchor: XANCHOR_NONE

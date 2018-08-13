@@ -46,7 +46,7 @@ function BaseModel:act(space_percent)
     end
     self.my_param = 0
     if self.productivity < self.norm_productivity then
-        self.my_param = 0.05 * self.importance
+        self.my_param = 0.075 * self.importance
     end
 end
 
