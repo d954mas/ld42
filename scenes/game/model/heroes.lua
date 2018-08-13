@@ -44,6 +44,10 @@ function BaseModel:act(space_percent)
     if self.productivity < 0.0001 then
         self.productivity = 0
     end
+    self.my_param = 0
+    if self.productivity < self.norm_productivity then
+        self.my_param = 0.05 * self.importance
+    end
 end
 
 
@@ -57,8 +61,8 @@ M.hero_1 = BaseModel(
 --[[temp_minus]]         1,
 --[[temp_plus]]          1.5,
 --[[importance]]         1,
---[[norm_happy]]         0.5,
---[[norm_productivity]]  0.3,
+--[[norm_happy]]         0.4,
+--[[norm_productivity]]  0.1,
 --[[need_space]]         0.18)
 
 M.hero_2 = BaseModel(
@@ -72,7 +76,7 @@ M.hero_2 = BaseModel(
 --[[temp_plus]]          1,
 --[[importance]]         1.5,
 --[[norm_happy]]         0.6,
---[[norm_productivity]]  0.3,
+--[[norm_productivity]]  0.1,
 --[[need_space]]         0.15)
 
 M.hero_3 = BaseModel(
@@ -85,8 +89,8 @@ M.hero_3 = BaseModel(
 --[[temp_minus]]         0.5,
 --[[temp_plus]]          1.5,
 --[[importance]]         2,
---[[norm_happy]]         0.5,
---[[norm_productivity]]  0.3,
+--[[norm_happy]]         0.3,
+--[[norm_productivity]]  0.1,
 --[[need_space]]         0.33)
 
 return M
